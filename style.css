@@ -1,0 +1,302 @@
+h3 {
+    font-weight: inherit;
+}
+
+h4 {
+    font-size: 50px;
+}
+
+:root {
+    --background-color: #2C3333;
+    --text-color: #E7F6F2;
+    --accent-darker: #395B64;
+    --subheading: #7FC7D9;
+}
+
+.light-theme {
+    --background-color: #FBF7F0;
+    --text-color: #555555;
+    --accent-darker: #FFDFDF;
+    --subheading: #FF9EAA;
+}
+
+a:link {
+    text-decoration: none
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lora", Serif;
+    overflow-x: hidden;
+}
+
+/*body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 20px solid #31363F;
+    pointer-events: none;
+    z-index: 1000;
+} */
+
+.header-text {
+    position: absolute;
+    top: 25%;
+    right: 50%;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--text-color);
+    transform: translate(0, 25%);
+}
+
+.homepage {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* Adding a line after the homepage div*/
+.homepage::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+.social-icon {
+    color: var(--subheading);
+    font-size: 1.8em;
+    margin: 0 20px;
+}
+
+.social-media {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 75%;
+    left: 11%;
+}
+
+.social-icon:hover {
+    color: var(--accent-darker);
+}
+
+/* About - Mainpage */
+.about {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    left: 225px;
+    line-height: 20px;
+
+}
+
+
+.about-link {
+    color: var(--subheading);
+}
+
+.about-text {
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    position: absolute;
+    top: 100px;
+
+}
+
+/* Experience - Mainpage */
+.experience {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    top: 1500px;
+    left: 225px;
+    line-height: 20px;
+}
+
+.experience-link {
+    color: var(--subheading);
+}
+
+.experience-text {
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100px;
+}
+
+.fixed-top {
+    width: 100%;
+    max-width: 1400px;
+    position: fixed;
+    margin: 0 auto;
+    top: -100px;
+    left: 10px;
+    z-index: 1001;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 50px;
+    transition: top 0.8s ease-in-out;
+    background-color: var(--accent-darker);
+    border-radius: 25px;
+}
+
+/* Styling icons on the fixed bar on top*/
+.home-icon,
+.icon-link,
+.dropbutton {
+    font-size: 1.8em;
+    color: var(--subheading);
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.left-section,
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Menu - Mainpage */
+.dropdown,
+.contact,
+.home-button {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+}
+
+/*Styling the menu button*/
+.dropbutton {
+    position: relative;
+    font-family: "Alegreya Sans SC", sans-serif;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    color: var(--subheading);
+    cursor: pointer;
+    z-index: 1000;
+    /*Ensure the menu button is above the fullscreen menu*/
+}
+
+.dropbutton::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--subheading);
+    transform: translateY(10px);
+    transition: width 1s ease-in-out;
+}
+
+.dropbutton:hover::after {
+    width: 100%;
+}
+
+.home-button::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--subheading);
+    transform: translateY(20px);
+    transition: width 1s ease-in-out;
+}
+
+.home-button:hover::after {
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: fixed;
+    background-color: var(--accent-darker);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 100px;
+    text-align: left;
+    flex-direction: column;
+    overflow: auto;
+
+}
+
+.dropdown-content li {
+    margin: 20px 0;
+}
+
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 10px;
+    font-size: 45px;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--subheading);
+}
+
+.dropdown-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contact Me - Mainpage */
+.contact a {
+    text-decoration: none;
+}
+
+#toggleButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#toggleIcon {
+    font-size: 2em;
+    color: var(--subheading)
+}
+
+#text-container {
+    color: var(--subheading);
+    font-size: 25px;
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    transform: translate(0, 25%);
+}
