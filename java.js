@@ -11,12 +11,12 @@ toggleButton.addEventListener('click', function () {
         toggleIcon.classList.remove('fa-moon');
         toggleIcon.classList.add('fa-sun');
     }
-})
+});
 
 // Actively changing text under name
 document.addEventListener('DOMContentLoaded', (event) => {
     const textContainer = document.getElementById('text-container');
-    const words = ['Beautiful', 'Student', 'Learner', 'Daniel Liu\'s GF', '#justagirl', '#strongindependentwoman'];
+    const words = ['Beautiful', 'Student', 'Learner', 'Daniel Liu\'s GF', '#justagirl', '#strongindependentwoman', 'zohas bsf'];
     const typingDelay = 200;
     const erasingDelay = 100;
     const newTextDelay = 2000;
@@ -85,15 +85,64 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 //Making the fixed top appear as user scrolls down
 
-document.addEventListener('scroll', function (event) {
-    const fixedTop = document.querySelector('.fixed-top');
-    const home = document.querySelector('.homepage').offsetHeight;
+document.addEventListener('DOMContentLoaded', (event) => {
 
-    //The pixels scrolled is over the pixels of the height of the homepage, we want fixed top to show
-    if (window.scrollY > 0) {
-        fixedTop.style.top = '20px';
+var navbar = document.getElementById('navigation');
+var defaultIndicator = document.getElementById('progress-indicator');
+var changeIndicator = document.getElementById('indicator');
+var sticky = navbar.offsetTop;
+
+window. onscroll = function() {
+    makeNavBarSticky();
+}
+
+function makeNavBarSticky() {
+    if (window.scrollY >= sticky) {
+        navbar.classList.add('sticky');
+        defaultIndicator.classList.add('stick');
+        changeIndicator.classList.add('sticks');
     } else {
-        //The pixels scrolled is less than the pixels of the height of the homepage, we want fixed top to not show
-        fixedTop.style.top = '-100px';
+        navbar.classList.remove('sticky');
+        defaultIndicator.classList.remove('stick');
+        changeIndicator.classList.remove('sticks');
     }
-})
+}
+
+});
+
+//Auto-scroll button to the fixed naviagtion bar
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const scrollButton = document.getElementById('scrollButton');
+    const targetSection = document.getElementById('navigation');
+
+    scrollButton.addEventListener('click', function() {
+        targetSection.scrollIntoView({behavior:'smooth'});
+    });
+
+});
+
+// Dynamic Scroll line
+
+document.addEventListener('DOMContentLoaded', (event) => {
+
+// 1. Get current position of scroll in pixels
+// 2. Get total height of scrollable part minus visible area
+// 3. Calculate progress in percentage
+// 4. Change CSS property width of indicator bar based on scroll
+
+function scrollIndicator() {
+    const currentPos = document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    //scrollHeight gives you the total height of the scrollable part of the page
+    //clientHeight gives you the part that the user sees (viewport)
+    // the difference gives you the maximum scroll height
+
+    const scrolled = (currentPos / height) *100;
+
+    document.getElementById('indicator').style.width = scrolled + '%'
+}
+
+document.addEventListener('scroll', scrollIndicator);
+
+});
