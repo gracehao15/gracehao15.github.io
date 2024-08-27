@@ -1,6 +1,8 @@
 // Toggle between light and dark theme
+document.addEventListener('DOMContentLoaded', (event) => {
 const toggleButton = document.getElementById('toggleButton');
 
+if (toggleButton) {
 toggleButton.addEventListener('click', function () {
     document.body.classList.toggle('light-theme');
 
@@ -11,6 +13,10 @@ toggleButton.addEventListener('click', function () {
         toggleIcon.classList.remove('fa-moon');
         toggleIcon.classList.add('fa-sun');
     }
+});
+
+}
+
 });
 
 // Actively changing text under name
@@ -72,6 +78,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const menuButton = document.querySelector('.dropbutton');
     const fullscreenMenu = document.querySelector('.dropdown-content');
 
+    if(menuButton) {
     menuButton.addEventListener('click', () => {
         if (fullscreenMenu.style.display === 'flex') {
             fullscreenMenu.style.display = 'none';
@@ -81,6 +88,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             menuButton.textContent = 'C L O S E';
         }
     })
+}
 });
 
 //Making the fixed top appear as user scrolls down
@@ -88,8 +96,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
 document.addEventListener('DOMContentLoaded', (event) => {
 
 var navbar = document.getElementById('navigation');
+if (navbar) {
+    console.log('Element found:', navbar);
+    console.log('offsetTop:', navbar.offsetTop);
+} else {
+    console.error('Element not found');
+}
+
 var defaultIndicator = document.getElementById('progress-indicator');
 var changeIndicator = document.getElementById('indicator');
+
+if (navigation) {
 var sticky = navbar.offsetTop;
 
 window. onscroll = function() {
@@ -106,6 +123,8 @@ function makeNavBarSticky() {
         defaultIndicator.classList.remove('stick');
         changeIndicator.classList.remove('sticks');
     }
+}
+
 }
 
 });
@@ -146,3 +165,59 @@ function scrollIndicator() {
 document.addEventListener('scroll', scrollIndicator);
 
 });
+
+// Enable scrolling in description part of the projects page until user reaches a certain point 
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const descriptionSection = document.getElementById('descriptionSection');
+    var navbar = document.getElementById('navigation');
+    var sticky = navbar.offsetTop;
+
+    function enableScroll() {
+
+        if (window.scrollY >= sticky) {
+            descriptionSection.style.pointerEvents = 'auto';
+            descriptionSection.style.overflow='auto';
+        } else {
+            descriptionSection.style.pointerEvents = 'none';
+            descriptionSection.style.overflow= 'hidden';
+        }
+    }
+
+    document.addEventListener('scroll', () => {
+        enableScroll();
+        makeNavBarSticky();
+    })
+
+})
+
+// Changing the project number when you scroll past a description
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    var numberSection = document.getElementById('numberSection');
+    var scrollAmount = 0;
+    let incrementThreshold = 300; // Increment number after scrolling 300px
+    let currentNumber = 0;
+
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    const projectNumber = document.getElementById('numberSection');
+    const projects = document.querySelectorAll('.project');
+    
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          projectNumber.textContent = entry.target.dataset.number;
+        }
+      });
+    }, {
+      threshold: 0.7 // Adjust to trigger when 50% of the element is visible
+    });
+  
+    projects.forEach(project => {
+      observer.observe(project);
+    });
+  });
+
+

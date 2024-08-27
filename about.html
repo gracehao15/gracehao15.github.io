@@ -4,14 +4,78 @@
 <!--Metadata for the page-->
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type= "text/css" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="java.js" defer></script>
+
     <!--Title of webpage in browser-->
         <title>Grace's Website</title>
 </head>
 <body>
-    <h4> About Me</h1>
-    <p> This is all about me.</p>
-    <a href="index.html">Back to homepage</a>
+    <div class="homepage">
+        <div class="header-text">
+            <h3> Let's Talk 🔈</h3>
+            <h1> About Me.</h1>
+        </div>
+
+        <div class="cover-photo">
+            <img src="headshot.jpeg">
+        </div>
+
+    </div>
+    
+    <!-- Navigation bar; must fix later -->
+    <div id= "navigation">
+        <div class="left-section">
+            <div class="home-button">
+                <a href="index.html" class="home-icon">
+                    <i class="fas fa-house"></i>
+                </a>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbutton">M E N U</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="projects.html">Projects</a>
+                    </ul>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--Link to send email to me-->
+        <div class="right-section">
+            <div class="contact">
+                <a href="mailto:gracelianghao@gmail.com" class="icon-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+            </div>
+
+            <button id="toggleButton">
+                <i id="toggleIcon" class="fas fa-sun"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <div id="progress-indicator">
+        <div id="indicator"></div>
+    </div>
+
+    <div class="first-container">
+        <h4 class="first-container-title">🧸</h4>
+        <p>Hi ! My name is Grace Hao and I'm a second year computer engineering student at the University of Toronto. 
+        <br><br>
+        I was first introduced to the field of engineering through my parents who studied electrical engineering in China. However, it wasn't until Grade 12 that I decided to pursue engineering as a possible career opportunity. Currently, I am interested in ___.
+        <br><br>
+        Outside of school, I enjoy drawing, doodling, baking, and spending time with my family and friends. 
+        </p>
+    </div>
 
     
 

@@ -5,13 +5,104 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type= "text/css" href="style.css" />
+    <script src="java.js" defer></script>
+
     <!--Title of webpage in browser-->
         <title>Grace's Website</title>
 </head>
 <body>
-    <h1> Experience</h1>
-    <p> These are all my experiences.</p>
-    <a href="index.html">Back to homepage</a>
+    <div class="homepage">
+        <div class="header-text">
+            <h3>Here are my </h3>
+            <h1>Projects.</h1>
+        </div>
+    </div>
+
+    <div id= "navigation">
+        <div class="left-section">
+            <div class="home-button">
+                <a href="index.html" class="home-icon">
+                    <i class="fas fa-house"></i>
+                </a>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbutton">M E N U</button>
+                <div class="dropdown-content">
+                    <ul>
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="projects.html">Projects</a>
+                    </ul>
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--Link to send email to me-->
+        <div class="right-section">
+            <div class="contact">
+                <a href="mailto:gracelianghao@gmail.com" class="icon-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+
+            </div>
+
+            <button id="toggleButton">
+                <i id="toggleIcon" class="fas fa-sun"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <div id="progress-indicator">
+        <div id="indicator"></div>
+    </div>
+
+    <div class="projects-container">
+        <div class="number-section" id="numberSection"> 01
+        </div>
+            <div class="description-section" id="descriptionSection">
+                <div class="project" data-number="01">
+                    <p class="date">Jan 2024 - Apr 2024</p>
+                    <p class="text-title">Integrated Wristband Technology for Circadian Rhythm Sleep Disorders</p>
+                    <p class="description-text">
+                        Working in a team of six engineering students, we developed a non-intrusive method of tracking an indiviual's circadian rhythm to help in the diagnosis and research of circadian rhythm sleep disorders (CRSDs). 
+                        Prior to our project, the majority of diagnosis procedures for CRSDs were either intrusive or unreliable, making it difficult to collect information on CRSDs. We worked closely with our clients, Dr. Tatyana 
+                        Mollayeva and Dr. Cesar Marquez-Chin, who are scientists at KITE Toronto Rehabilitation Center and the University Health Network (UHN). 
+                        <br><br>
+                        I used various project management techniques, namely Gantt charts to monitor and delegate tasks amongst team members, which faciliated with building a strong teamworking environment. From the technnical standpoint,  
+                        our device utilized event-driven programming to enable a dynamic and user-friendly experience, an internal hard drive to store data, and NFC to transfer data to the doctors for analysis. By the end of our project, 
+                        we created an integrated wristband prototype that would measure body temperature, heart rate, and bedtime/wake-time, which we introduced in a team showcase to our client.  
+
+                    </p>
+
+                </div>
+                <!--<div class="project" data-number="02">
+                    <p class="date">May 2024 - June 2024</p>
+                    <p class="text-title">Learning Python</p>
+                    <p class="description-text">
+                        Over the course of a month, I 
+                    </p>
+                </div> -->
+                <div class="project" data-number="02">
+                    <p class="date">June 2024 - August 2024</p>
+                    <p class="text-title">My Personal Portfolio Website</p>
+                    <p class="description-text">
+                        I created my own personal portfolio website using HTML, CSS, and JavaScript. I was able to learn about the fundamentals of web design and development, precisely the underlying architecture of a webpage. 
+                        This project enabled me to understand the layers of design and code that are involved in creating a dynamic webpage that faciliates a positive user-friendly experience and is visually appealing/ intuitive
+                        for the user. This inspired me to experiment with various layouts, color themes, fonts, spacing, and a variety of other design techniques. 
+                        <br><br>
+                        Upon completion of my portfolio, I enhanced my knowledge on the process
+                        of deploying a website on the internet for users to access and the purpose of domain registration and choosing a hosting provider. This provided me with greater understanding on how a website actually exists on the 
+                        internet, enabling me to appreciate the complexity of the web development process; all starting from a simple HTML page. 
+                        <br><br>
+                    </p>
+                </div>
+            </div>
+    </div>
 
 </body>
 </html>
