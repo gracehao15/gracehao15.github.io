@@ -584,8 +584,6 @@ body {
     width: 100%;
 }
 
-
-
 .dropdown-content {
     display: none;
     position: fixed;
@@ -671,11 +669,92 @@ body {
 
 .first-container {
     position: relative;
-    top: 9rem;
-    width: 100%;
+    color: var(--text-color);
+    font-size: 1.1em;
+    line-height: 2em;
+    top: 35em;
+    left: 55%;
+    max-width: 40vw;
     height: 100vh;
     display: flex;
     justify-content: center;
+}
+
+.about-photo {
+    display: flex;
+    position: relative;
+}
+
+.image-slideshow {
+    max-width: 100%;
+    width: 45%;
+    margin-left: 5%;
+    margin-top: 15%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.overlay-text {
+    position: absolute;
+    color: var(--text-color);
+    max-width: 25vw;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
+    top: 1.6em;
+    left: 55%;
+    font-size: 8em;
+    line-height: 98%;
+    overflow: hidden;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-title {
+    position: absolute;
+    top: 40em;
+    color: var(--text-color);
+    font-size: 3em;
+    font-weight: bold;
+
+}
+
+.gallery-text {
+    position: relative;
+    top: 35em;
+    max-width: 80vw;
+    color: var(--text-color);
+    overflow-wrap: break-word;
+    overflow: hidden;
+    font-size: 1.1em;
+    line-height: 2em;
+    display: flex;
+}
+
+.gallery-item {
+    position: relative;
+    max-width: 100vw;
+    top: 40em;
+    width: 40%;
+    height: 40%;
+    overflow: hidden;
+    cursor: pointer;
+    margin: 1em;
+
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+}
+
+.gallery-item img:hover{
+    transform: scale(1.1);
 }
 
 /* Projects Page */
@@ -738,4 +817,5 @@ body {
     padding: 0;
     font-weight: bold;
 }
+
 

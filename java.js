@@ -220,4 +220,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+// Image slideshow 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const images = ["grace.jpeg", "grace1.jpeg", "grace2.jpeg", "grace3.jpeg"];
+    let index = 0;
+    let numImages = images.length;
+
+    function changeImage() {
+        slideshow = document.getElementById("slideshow");
+        slideshow.src = images[index];
+        index = (index + 1) % numImages;
+    }
+
+    setInterval(changeImage, 3000);
+})
