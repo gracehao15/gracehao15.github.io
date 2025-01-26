@@ -1,28 +1,28 @@
 // Toggle between light and dark theme
 document.addEventListener('DOMContentLoaded', (event) => {
-const toggleButton = document.getElementById('toggleButton');
+    const toggleButton = document.getElementById('toggleButton');
 
-if (toggleButton) {
-toggleButton.addEventListener('click', function () {
-    document.body.classList.toggle('light-theme');
+    if (toggleButton) {
+        toggleButton.addEventListener('click', function () {
+            document.body.classList.toggle('light-theme');
 
-    if (document.body.classList.contains('light-theme')) {
-        toggleIcon.classList.remove('fa-sun');
-        toggleIcon.classList.add('fa-moon');
-    } else {
-        toggleIcon.classList.remove('fa-moon');
-        toggleIcon.classList.add('fa-sun');
+            if (document.body.classList.contains('light-theme')) {
+                toggleIcon.classList.remove('fa-sun');
+                toggleIcon.classList.add('fa-moon');
+            } else {
+                toggleIcon.classList.remove('fa-moon');
+                toggleIcon.classList.add('fa-sun');
+            }
+        });
+
     }
-});
-
-}
 
 });
 
 // Actively changing text under name
 document.addEventListener('DOMContentLoaded', (event) => {
     const textContainer = document.getElementById('text-container');
-    const words = ['Beautiful', 'Student', 'Learner', 'Daniel Liu\'s GF', '#justagirl', '#strongindependentwoman', 'zohas bsf'];
+    const words = ['Engineering Student', 'Problem Solver', 'Creative', 'Hard Working', 'Diligent', 'Analytical', 'Flexible'];
     const typingDelay = 200;
     const erasingDelay = 100;
     const newTextDelay = 2000;
@@ -78,54 +78,54 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const menuButton = document.querySelector('.dropbutton');
     const fullscreenMenu = document.querySelector('.dropdown-content');
 
-    if(menuButton) {
-    menuButton.addEventListener('click', () => {
-        if (fullscreenMenu.style.display === 'flex') {
-            fullscreenMenu.style.display = 'none';
-            menuButton.textContent = 'M E N U';
-        } else {
-            fullscreenMenu.style.display = 'flex';
-            menuButton.textContent = 'C L O S E';
-        }
-    })
-}
+    if (menuButton) {
+        menuButton.addEventListener('click', () => {
+            if (fullscreenMenu.style.display === 'flex') {
+                fullscreenMenu.style.display = 'none';
+                menuButton.textContent = 'M E N U';
+            } else {
+                fullscreenMenu.style.display = 'flex';
+                menuButton.textContent = 'C L O S E';
+            }
+        })
+    }
 });
 
 //Making the fixed top appear as user scrolls down
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-var navbar = document.getElementById('navigation');
-if (navbar) {
-    console.log('Element found:', navbar);
-    console.log('offsetTop:', navbar.offsetTop);
-} else {
-    console.error('Element not found');
-}
-
-var defaultIndicator = document.getElementById('progress-indicator');
-var changeIndicator = document.getElementById('indicator');
-
-if (navigation) {
-var sticky = navbar.offsetTop;
-
-window. onscroll = function() {
-    makeNavBarSticky();
-}
-
-function makeNavBarSticky() {
-    if (window.scrollY >= sticky) {
-        navbar.classList.add('sticky');
-        defaultIndicator.classList.add('stick');
-        changeIndicator.classList.add('sticks');
+    var navbar = document.getElementById('navigation');
+    if (navbar) {
+        console.log('Element found:', navbar);
+        console.log('offsetTop:', navbar.offsetTop);
     } else {
-        navbar.classList.remove('sticky');
-        defaultIndicator.classList.remove('stick');
-        changeIndicator.classList.remove('sticks');
+        console.error('Element not found');
     }
-}
 
-}
+    var defaultIndicator = document.getElementById('progress-indicator');
+    var changeIndicator = document.getElementById('indicator');
+
+    if (navigation) {
+        var sticky = navbar.offsetTop;
+
+        window.onscroll = function () {
+            makeNavBarSticky();
+        }
+
+        function makeNavBarSticky() {
+            if (window.scrollY >= sticky) {
+                navbar.classList.add('sticky');
+                defaultIndicator.classList.add('stick');
+                changeIndicator.classList.add('sticks');
+            } else {
+                navbar.classList.remove('sticky');
+                defaultIndicator.classList.remove('stick');
+                changeIndicator.classList.remove('sticks');
+            }
+        }
+
+    }
 
 });
 
@@ -135,8 +135,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const scrollButton = document.getElementById('scrollButton');
     const targetSection = document.getElementById('navigation');
 
-    scrollButton.addEventListener('click', function() {
-        targetSection.scrollIntoView({behavior:'smooth'});
+    scrollButton.addEventListener('click', function () {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
     });
 
 });
@@ -145,24 +145,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
-// 1. Get current position of scroll in pixels
-// 2. Get total height of scrollable part minus visible area
-// 3. Calculate progress in percentage
-// 4. Change CSS property width of indicator bar based on scroll
+    // 1. Get current position of scroll in pixels
+    // 2. Get total height of scrollable part minus visible area
+    // 3. Calculate progress in percentage
+    // 4. Change CSS property width of indicator bar based on scroll
 
-function scrollIndicator() {
-    const currentPos = document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    //scrollHeight gives you the total height of the scrollable part of the page
-    //clientHeight gives you the part that the user sees (viewport)
-    // the difference gives you the maximum scroll height
+    function scrollIndicator() {
+        const currentPos = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        //scrollHeight gives you the total height of the scrollable part of the page
+        //clientHeight gives you the part that the user sees (viewport)
+        // the difference gives you the maximum scroll height
 
-    const scrolled = (currentPos / height) *100;
+        const scrolled = (currentPos / height) * 100;
 
-    document.getElementById('indicator').style.width = scrolled + '%'
-}
+        document.getElementById('indicator').style.width = scrolled + '%'
+    }
 
-document.addEventListener('scroll', scrollIndicator);
+    document.addEventListener('scroll', scrollIndicator);
 
 });
 
@@ -177,10 +177,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         if (window.scrollY >= sticky) {
             descriptionSection.style.pointerEvents = 'auto';
-            descriptionSection.style.overflow='auto';
+            descriptionSection.style.overflow = 'auto';
         } else {
             descriptionSection.style.pointerEvents = 'none';
-            descriptionSection.style.overflow= 'hidden';
+            descriptionSection.style.overflow = 'hidden';
         }
     }
 
@@ -204,21 +204,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
 document.addEventListener('DOMContentLoaded', () => {
     const projectNumber = document.getElementById('numberSection');
     const projects = document.querySelectorAll('.project');
-    
+
     const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          projectNumber.textContent = entry.target.dataset.number;
-        }
-      });
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                projectNumber.textContent = entry.target.dataset.number;
+            }
+        });
     }, {
-      threshold: 0.7 // Adjust to trigger when 50% of the element is visible
+        threshold: 0.7 // Adjust to trigger when 50% of the element is visible
     });
-  
+
     projects.forEach(project => {
-      observer.observe(project);
+        observer.observe(project);
     });
-  });
+});
 
 // Image slideshow 
 
